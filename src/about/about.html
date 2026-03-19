@@ -38,24 +38,57 @@
     </header>
     <main>
         <section class="bg-white dark:bg-gray-900">
-            <div class="max-w-screen-xl mx-auto px-4 py-10 lg:py-16">
-                <div class="text-center max-w-3xl mx-auto">
-                    <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl dark:text-white">About <span id="aboutMarketplaceName">CreatorHub</span></h1>
-                    <p class="mb-6 text-lg font-light text-gray-500 lg:text-xl dark:text-gray-400">We build practical web experiences with clean UI structure, reusable patterns, and responsive components.</p>
+            <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+                <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">About <span class="text-blue-700">Gooomly</span></h2>
+                    <p class="mb-4">We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.</p>
+                    <p>We build practical web experiences with clean UI structure, reusable patterns, and responsive components.</p>
                 </div>
-                <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-12">
-                    <article class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Our Mission</h2>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">Deliver accessible, high-quality interfaces that are easy to scale across multiple pages.</p>
-                    </article>
-                    <article class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Our Process</h2>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">Use consistent design systems, semantic HTML, and utility-first styling for fast iteration.</p>
-                    </article>
-                    <article class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Our Values</h2>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">Focus on clarity, maintainability, and user-centered layouts across every page.</p>
-                    </article>
+                <div class="grid grid-cols-2 gap-4 mt-8">
+                    <img class="w-full rounded-lg" src="../../assets/images/gooomly-hero.png" alt="office content 1">
+                    <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 2">
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gray-50 dark:bg-gray-800">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+                <div class="max-w-screen-md mb-8 lg:mb-16">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our Core Principles</h2>
+                    <p class="text-gray-500 sm:text-xl dark:text-gray-400">We operate on a foundation of clear principles that guide every decision and project, ensuring consistency and quality in everything we do.</p>
+                </div>
+                <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+                    <div>
+                        <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                            <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.042.942l-1.006 4.024a1 1 0 00.992 1.213l7-3a1 1 0 000-1.84l-4.25-1.823a.999.999 0 01-.042-.942l1.006-4.024a1 1 0 00-.992-1.213zM9.5 6.588l-3.5 1.502 1.006-4.024L9.5 6.588z"></path></svg>
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold dark:text-white">Our Mission</h3>
+                        <p class="text-gray-500 dark:text-gray-400">Deliver accessible, high-quality interfaces that are easy to scale across multiple pages.</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                            <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 5.555a.5.5 0 01.445-.445l3.5 1a.5.5 0 010 .89l-3.5 1a.5.5 0 01-.445-.445V5.555zM10 13a3 3 0 100-6 3 3 0 000 6z"></path></svg>
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold dark:text-white">Our Process</h3>
+                        <p class="text-gray-500 dark:text-gray-400">Use consistent design systems, semantic HTML, and utility-first styling for fast iteration.</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
+                            <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v1.5a1.5 1.5 0 01-3 0V13a2 2 0 00-4 0v1a1 1 0 102 0v-1a1 1 0 112 0v1a3 3 0 11-6 0V9a1 1 0 011-1h1V7a1 1 0 10-2 0v1a1 1 0 102 0V8a3 3 0 013-3h.008C9.07 4.978 8.522 4.5 8 4.5a2.5 2.5 0 00-2.5 2.5v.5A1.5 1.5 0 013 9v-1.168A6.002 6.002 0 014.332 8.027z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold dark:text-white">Our Values</h3>
+                        <p class="text-gray-500 dark:text-gray-400">Focus on clarity, maintainability, and user-centered layouts across every page.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white dark:bg-gray-900">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+                <div class="mx-auto max-w-screen-sm">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Let's build something together</h2>
+                    <p class="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Have a project in mind? We’d love to hear about it. Get in touch with us to see how we can help you achieve your goals.</p>
+                    <a href="../contact/contact.html" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Contact Us</a>
                 </div>
             </div>
         </section>
