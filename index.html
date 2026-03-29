@@ -32,53 +32,234 @@
             border: 1px solid var(--primary-color-border);
         }
 
-        .nav-link {
-            display: block;
-            padding: 0.5rem 0.9rem;
-            border-radius: 9999px;
+        /* ── Premium Navbar System ─────────────────────── */
+        .goo-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(14px) saturate(180%);
+            -webkit-backdrop-filter: blur(14px) saturate(180%);
+            border-bottom: 1px solid rgba(229,231,235,0.7);
+            transition: background 300ms ease, border-color 300ms ease;
+        }
+        .dark .goo-nav {
+            background: rgba(17,24,39,0.88);
+            border-bottom-color: rgba(55,65,81,0.7);
+        }
+        .goo-nav-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.85rem 1.5rem;
+        }
+        .goo-nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .goo-nav-brand img {
+            height: 36px;
+            width: 36px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .goo-nav-brand span {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
             color: #111827;
-            transition: all 160ms ease;
         }
-        .nav-link:hover {
-            background-color: var(--primary-color-soft);
+        .dark .goo-nav-brand span { color: #f9fafb; }
+
+        .goo-nav-links {
+            display: none;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 0.25rem;
+        }
+        @media(min-width:768px) {
+            .goo-nav-links { display: flex; align-items: center; }
+        }
+        .goo-nav-links a {
+            position: relative;
+            display: block;
+            padding: 0.45rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #4b5563;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: color 160ms ease, background 160ms ease;
+        }
+        .goo-nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            border-radius: 99px;
+            transition: width 220ms ease, left 220ms ease;
+        }
+        .goo-nav-links a:hover {
+            color: #111827;
+            background: rgba(202,252,79,0.10);
+        }
+        .goo-nav-links a:hover::after {
+            width: 60%;
+            left: 20%;
+        }
+        .goo-nav-links a.nav-active {
             color: var(--primary-color-text);
+            font-weight: 600;
         }
-        .nav-active {
-            background-color: var(--primary-color);
-            color: var(--primary-color-dark-text);
-            border: 1px solid var(--primary-color-hover);
-            box-shadow: 0 4px 10px rgba(17, 24, 39, 0.08);
+        .goo-nav-links a.nav-active::after {
+            width: 60%;
+            left: 20%;
+            background: var(--primary-color);
         }
-        .dark .nav-link {
+        .dark .goo-nav-links a { color: #9ca3af; }
+        .dark .goo-nav-links a:hover { color: #f3f4f6; background: rgba(202,252,79,0.08); }
+        .dark .goo-nav-links a.nav-active { color: var(--primary-color); }
+
+        .goo-nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+        .goo-signin-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #374151;
+            text-decoration: none;
+            padding: 0.45rem 0.75rem;
+            border-radius: 8px;
+            transition: color 160ms ease, background 160ms ease;
+        }
+        .goo-signin-link:hover { color: #111827; background: rgba(0,0,0,0.04); }
+        .dark .goo-signin-link { color: #d1d5db; }
+        .dark .goo-signin-link:hover { color: #f9fafb; background: rgba(255,255,255,0.06); }
+
+        .goo-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            padding: 0.55rem 1.25rem;
+            border-radius: 9999px !important;
+            background: #111827;
             color: #f9fafb;
+            border: 1px solid #1f2937;
+            text-decoration: none;
+            transition: all 200ms ease;
+            letter-spacing: 0.01em;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .goo-cta-btn:hover {
+            background: #1f2937;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(17,24,39,0.18);
+        }
+        .goo-cta-btn:active { transform: translateY(0); box-shadow: 0 2px 6px rgba(17,24,39,0.12); }
+        .dark .goo-cta-btn {
+            background: var(--primary-color);
+            color: #111827;
+            border-color: var(--primary-color-hover);
+        }
+        .dark .goo-cta-btn:hover {
+            background: var(--primary-color-hover);
+            box-shadow: 0 6px 20px rgba(202,252,79,0.2);
         }
 
-        /* Modern pill button system */
-        button,
-        a[class*="rounded-lg"] {
+        .goo-theme-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px !important;
+            background: transparent;
+            border: 1px solid transparent;
+            color: #6b7280;
+            cursor: pointer;
+            transition: all 160ms ease;
+        }
+        .goo-theme-btn:hover {
+            background: rgba(0,0,0,0.04);
+            color: #374151;
+            transform: none;
+            box-shadow: none;
+        }
+        .dark .goo-theme-btn { color: #9ca3af; }
+        .dark .goo-theme-btn:hover { background: rgba(255,255,255,0.06); color: #e5e7eb; }
+
+        /* Mobile menu */
+        .goo-mobile-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px !important;
+            background: transparent;
+            border: none;
+            color: #6b7280;
+            cursor: pointer;
+            transition: background 160ms ease;
+        }
+        .goo-mobile-toggle:hover { background: rgba(0,0,0,0.04); transform: none; box-shadow: none; }
+        .dark .goo-mobile-toggle { color: #9ca3af; }
+        .dark .goo-mobile-toggle:hover { background: rgba(255,255,255,0.06); }
+        @media(min-width:768px) { .goo-mobile-toggle { display: none; } }
+        .goo-mobile-menu {
+            display: none;
+            padding: 0.5rem 1.5rem 1rem;
+            border-top: 1px solid rgba(229,231,235,0.5);
+        }
+        .goo-mobile-menu.open { display: block; }
+        .dark .goo-mobile-menu { border-top-color: rgba(55,65,81,0.5); }
+        .goo-mobile-menu a {
+            display: block;
+            padding: 0.65rem 0.75rem;
+            font-size: 0.925rem;
+            font-weight: 500;
+            color: #374151;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 140ms ease;
+        }
+        .goo-mobile-menu a:hover { background: rgba(202,252,79,0.12); }
+        .goo-mobile-menu a.nav-active { color: var(--primary-color-text); font-weight: 600; background: rgba(202,252,79,0.10); }
+        .dark .goo-mobile-menu a { color: #d1d5db; }
+        .dark .goo-mobile-menu a:hover { background: rgba(202,252,79,0.08); }
+        .dark .goo-mobile-menu a.nav-active { color: var(--primary-color); }
+
+        /* ── Modern pill button system ────────────────── */
+        .primary-btn, button[type="submit"],
+        a.primary-btn {
             border-radius: 9999px !important;
             transition: all 180ms ease;
             letter-spacing: 0.01em;
-        }
-
-        button {
             font-weight: 600;
         }
-
-        button:hover,
-        a[class*="rounded-lg"]:hover {
+        .primary-btn:hover, button[type="submit"]:hover {
             transform: translateY(-1px);
             box-shadow: 0 10px 18px rgba(17, 24, 39, 0.12);
         }
-
-        button:active,
-        a[class*="rounded-lg"]:active {
+        .primary-btn:active, button[type="submit"]:active {
             transform: translateY(0);
             box-shadow: 0 5px 10px rgba(17, 24, 39, 0.08);
         }
-
-        button:focus-visible,
-        a[class*="rounded-lg"]:focus-visible {
+        .primary-btn:focus-visible, button[type="submit"]:focus-visible {
             outline: 2px solid var(--primary-color-border);
             outline-offset: 2px;
         }
@@ -145,31 +326,37 @@
 <body class="bg-gray-50 dark:bg-gray-900 font-sans">
 
     <!-- Navbar -->
-    <nav class="bg-white border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="assets/images/gooomly-logo.png" class="h-10 rounded shadow-sm" alt="Gooomly Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Gooomly</span>
+    <nav class="goo-nav">
+        <div class="goo-nav-inner">
+            <a href="index.html" class="goo-nav-brand">
+                <img src="assets/images/gooomly-logo.png" alt="Gooomly Logo" />
+                <span>Gooomly</span>
             </a>
-            <div class="flex md:order-2 space-x-3 rtl:space-x-reverse items-center">
-                <button type="button" class="theme-toggle-btn p-2 text-gray-500 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700" aria-label="Toggle dark mode"></button>
-                <a href="src/signin/signin.html" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign In</a>
-                <a href="src/signup/signup.html" class="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600">Sign Up</a>
-                <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-                    </svg>
+            <ul class="goo-nav-links">
+                <li><a href="index.html" class="nav-active" aria-current="page">Home</a></li>
+                <li><a href="src/about/about.html">About</a></li>
+                <li><a href="#lab-04-array-objects">Products</a></li>
+                <li><a href="src/contact/contact.html">Contact</a></li>
+            </ul>
+            <div class="goo-nav-actions">
+                <button type="button" class="goo-theme-btn theme-toggle-btn" aria-label="Toggle dark mode"></button>
+                <a href="src/signin/signin.html" class="goo-signin-link">Sign In</a>
+                <a href="src/signup/signup.html" class="goo-cta-btn">
+                    Get Started
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <button type="button" class="goo-mobile-toggle" id="mobileMenuToggle" aria-label="Open menu">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
             </div>
-            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
-                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                    <li><a href="index.html" class="nav-link nav-active" aria-current="page">Home</a></li>
-                    <li><a href="src/about/about.html" class="nav-link">About</a></li>
-                    <li><a href="#lab-04-array-objects" class="nav-link">Products</a></li>
-                    <li><a href="src/contact/contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </div>
+        </div>
+        <div class="goo-mobile-menu" id="mobileMenu">
+            <a href="index.html" class="nav-active">Home</a>
+            <a href="src/about/about.html">About</a>
+            <a href="#lab-04-array-objects">Products</a>
+            <a href="src/contact/contact.html">Contact</a>
+            <a href="src/signin/signin.html">Sign In</a>
+            <a href="src/signup/signup.html">Get Started →</a>
         </div>
     </nav>
 

@@ -8,91 +8,42 @@
     <link rel="icon" type="image/png" href="../../assets/images/gooomly-logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-    <style>
-        :root {
-            --primary-color: #cafc4f;
-            --primary-color-hover: #b7e642;
-            --primary-color-soft: #effecf;
-            --primary-color-border: #d6ee9a;
-            --primary-color-text: #3f4f1c;
-            --primary-color-dark-text: #111827;
-        }
-        .nav-link {
-            display: block;
-            padding: 0.5rem 0.9rem;
-            border-radius: 9999px;
-            color: #111827;
-            transition: all 160ms ease;
-        }
-        .nav-link:hover {
-            background-color: var(--primary-color-soft);
-            color: var(--primary-color-text);
-        }
-        .nav-active {
-            background-color: var(--primary-color);
-            color: var(--primary-color-dark-text);
-            border: 1px solid var(--primary-color-hover);
-            box-shadow: 0 4px 10px rgba(17, 24, 39, 0.08);
-        }
-        .dark .nav-link { color: #f9fafb; }
-        button, a[class*="rounded-lg"] {
-            border-radius: 9999px !important;
-            transition: all 180ms ease;
-            letter-spacing: 0.01em;
-        }
-        button:hover, a[class*="rounded-lg"]:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 10px 18px rgba(17, 24, 39, 0.12);
-        }
-        .bg-blue-700, .bg-blue-600, .dark\:bg-blue-600 {
-            background-color: var(--primary-color) !important;
-            color: var(--primary-color-dark-text) !important;
-            border-color: var(--primary-color-hover) !important;
-        }
-        .hover\:bg-blue-800:hover, .hover\:bg-blue-700:hover, .dark\:hover\:bg-blue-700:hover {
-            background-color: var(--primary-color-hover) !important;
-            color: var(--primary-color-dark-text) !important;
-        }
-        .focus\:ring-blue-300:focus, .focus\:ring-blue-200:focus, .dark\:focus\:ring-blue-800:focus, .dark\:focus\:ring-blue-900:focus {
-            --tw-ring-color: var(--primary-color-border) !important;
-        }
-        .text-blue-700, .text-blue-600, .text-blue-800, .dark\:text-blue-300, .dark\:text-blue-400, .dark\:text-blue-500,
-        .md\:text-blue-700, .md\:dark\:text-blue-500, .md\:hover\:text-blue-700, .md\:dark\:hover\:text-blue-500 {
-            color: var(--primary-color-text) !important;
-        }
-        .bg-blue-50, .from-blue-50, .to-indigo-50 { background-color: var(--primary-color-soft) !important; }
-        .border-blue-200, .dark\:border-blue-800, .focus\:border-blue-600:focus { border-color: var(--primary-color-border) !important; }
-        .focus\:ring-blue-600:focus { --tw-ring-color: var(--primary-color-border) !important; }
-        html.dark { color-scheme:dark; }
-        body { transition:background-color 300ms ease, color 300ms ease; }
-    </style>
+    <link rel="stylesheet" href="../styles/navbar.css">
     <script>(function(){var t=localStorage.getItem("gooomly-theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.classList.add("dark");}})();</script>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 font-sans">
     <header>
-        <nav class="bg-white border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <a href="../../index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="../../assets/images/gooomly-logo.png" class="h-10 rounded shadow-sm" alt="Gooomly Logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Gooomly</span>
+        <nav class="goo-nav">
+            <div class="goo-nav-inner">
+                <a href="../../index.html" class="goo-nav-brand">
+                    <img src="../../assets/images/gooomly-logo.png" alt="Gooomly Logo" />
+                    <span>Gooomly</span>
                 </a>
-                <div class="flex md:order-2 space-x-3 rtl:space-x-reverse items-center">
-                    <button type="button" class="theme-toggle-btn p-2 text-gray-500 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700" aria-label="Toggle dark mode"></button>
-                    <a href="../signin/signin.html" class="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600">Sign In</a>
-                    <a href="signup.html" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign Up</a>
-                    <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/></svg>
+                <ul class="goo-nav-links">
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../about/about.html">About</a></li>
+                    <li><a href="../../index.html#lab-04-array-objects">Products</a></li>
+                    <li><a href="../contact/contact.html">Contact</a></li>
+                </ul>
+                <div class="goo-nav-actions">
+                    <button type="button" class="goo-theme-btn theme-toggle-btn" aria-label="Toggle dark mode"></button>
+                    <a href="../signin/signin.html" class="goo-signin-link">Sign In</a>
+                    <a href="signup.html" class="goo-cta-btn">
+                        Get Started
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <button type="button" class="goo-mobile-toggle" id="mobileMenuToggle" aria-label="Open menu">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                     </button>
                 </div>
-                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
-                    <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                        <li><a href="../../index.html" class="nav-link">Home</a></li>
-                        <li><a href="../about/about.html" class="nav-link">About</a></li>
-                        <li><a href="../../index.html#lab-04-array-objects" class="nav-link">Products</a></li>
-                        <li><a href="../contact/contact.html" class="nav-link">Contact</a></li>
-                    </ul>
-                </div>
+            </div>
+            <div class="goo-mobile-menu" id="mobileMenu">
+                <a href="../../index.html">Home</a>
+                <a href="../about/about.html">About</a>
+                <a href="../../index.html#lab-04-array-objects">Products</a>
+                <a href="../contact/contact.html">Contact</a>
+                <a href="../signin/signin.html">Sign In</a>
+                <a href="signup.html">Get Started →</a>
             </div>
         </nav>
     </header>
@@ -185,6 +136,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script src="../../src/constants/themeConstants.js"></script>
     <script src="../../src/utils/theme.js"></script>
-    <script>document.addEventListener("DOMContentLoaded",()=>{initTheme();initThemeToggle();});</script>
+    <script>document.addEventListener("DOMContentLoaded",()=>{initTheme();initThemeToggle();var t=document.getElementById("mobileMenuToggle"),m=document.getElementById("mobileMenu");if(t&&m)t.addEventListener("click",()=>m.classList.toggle("open"));});</script>
 </body>
 </html>

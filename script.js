@@ -42,4 +42,13 @@ document.addEventListener("DOMContentLoaded", () => {
         renderControlStructures();
         showLabMessage("Catalog manager loaded successfully.", "info");
     }
+
+    // 4. Mobile menu toggle
+    const mobileToggle = document.getElementById("mobileMenuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    if (mobileToggle && mobileMenu) {
+        mobileToggle.addEventListener("click", () => {
+            mobileMenu.classList.toggle("open");
+        });
+    }
 });
