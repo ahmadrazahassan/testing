@@ -3,10 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 03 - Home | Gooomly</title>
-    <meta name="description" content="Welcome to the personal website of Ahmed Raza. Explore my projects and contact me for collaborations.">
+    <title>Gooomly | Home</title>
+    <meta name="description" content="Gooomly is the ultimate marketplace for creators to monetize digital assets. Explore UI kits, 3D models, templates, and more.">
+    <link rel="icon" type="image/png" href="assets/images/gooomly-logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <style>
+        :root {
+            --primary-color: #cafc4f;
+            --primary-color-hover: #b7e642;
+            --primary-color-soft: #effecf;
+            --primary-color-border: #d6ee9a;
+            --primary-color-text: #3f4f1c;
+            --primary-color-dark-text: #111827;
+        }
+
+        .primary-btn {
+            background-color: var(--primary-color);
+            color: var(--primary-color-dark-text);
+            border: 1px solid var(--primary-color-hover);
+        }
+        .primary-btn:hover {
+            background-color: var(--primary-color-hover);
+        }
+        .primary-chip {
+            background-color: var(--primary-color-soft);
+            color: var(--primary-color-text);
+            border: 1px solid var(--primary-color-border);
+        }
+
+        .nav-link {
+            display: block;
+            padding: 0.5rem 0.9rem;
+            border-radius: 9999px;
+            color: #111827;
+            transition: all 160ms ease;
+        }
+        .nav-link:hover {
+            background-color: var(--primary-color-soft);
+            color: var(--primary-color-text);
+        }
+        .nav-active {
+            background-color: var(--primary-color);
+            color: var(--primary-color-dark-text);
+            border: 1px solid var(--primary-color-hover);
+            box-shadow: 0 4px 10px rgba(17, 24, 39, 0.08);
+        }
+        .dark .nav-link {
+            color: #f9fafb;
+        }
+
+        /* Modern pill button system */
+        button,
+        a[class*="rounded-lg"] {
+            border-radius: 9999px !important;
+            transition: all 180ms ease;
+            letter-spacing: 0.01em;
+        }
+
+        button {
+            font-weight: 600;
+        }
+
+        button:hover,
+        a[class*="rounded-lg"]:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 18px rgba(17, 24, 39, 0.12);
+        }
+
+        button:active,
+        a[class*="rounded-lg"]:active {
+            transform: translateY(0);
+            box-shadow: 0 5px 10px rgba(17, 24, 39, 0.08);
+        }
+
+        button:focus-visible,
+        a[class*="rounded-lg"]:focus-visible {
+            outline: 2px solid var(--primary-color-border);
+            outline-offset: 2px;
+        }
+
+        /* Global primary-color mapping for existing Tailwind blue utilities */
+        .bg-blue-700,
+        .bg-blue-600,
+        .dark\:bg-blue-600 {
+            background-color: var(--primary-color) !important;
+            color: var(--primary-color-dark-text) !important;
+            border-color: var(--primary-color-hover) !important;
+        }
+
+        .hover\:bg-blue-800:hover,
+        .hover\:bg-blue-700:hover,
+        .dark\:hover\:bg-blue-700:hover {
+            background-color: var(--primary-color-hover) !important;
+            color: var(--primary-color-dark-text) !important;
+        }
+
+        .focus\:ring-blue-300:focus,
+        .focus\:ring-blue-200:focus,
+        .dark\:focus\:ring-blue-800:focus,
+        .dark\:focus\:ring-blue-900:focus {
+            --tw-ring-color: var(--primary-color-border) !important;
+        }
+
+        .text-blue-700,
+        .text-blue-800,
+        .dark\:text-blue-300,
+        .dark\:text-blue-400,
+        .md\:text-blue-700,
+        .md\:dark\:text-blue-500,
+        .md\:hover\:text-blue-700,
+        .md\:dark\:hover\:text-blue-500 {
+            color: var(--primary-color-text) !important;
+        }
+
+        .bg-blue-50,
+        .from-blue-50,
+        .to-indigo-50 {
+            background-color: var(--primary-color-soft) !important;
+        }
+
+        .border-blue-200,
+        .dark\:border-blue-800 {
+            border-color: var(--primary-color-border) !important;
+        }
+
+        /* Theme transition */
+        html.dark { color-scheme: dark; }
+        body { transition: background-color 300ms ease, color 300ms ease; }
+    </style>
+    <!-- Prevent flash of wrong theme -->
+    <script>
+        (function(){
+            const t = localStorage.getItem("gooomly-theme");
+            if(t==="dark"||(! t && window.matchMedia("(prefers-color-scheme: dark)").matches)){
+                document.documentElement.classList.add("dark");
+            }
+        })();
+    </script>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 font-sans">
 
@@ -17,7 +151,8 @@
                 <img src="assets/images/gooomly-logo.png" class="h-10 rounded shadow-sm" alt="Gooomly Logo" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Gooomly</span>
             </a>
-            <div class="flex md:order-2 space-x-3 rtl:space-x-reverse">
+            <div class="flex md:order-2 space-x-3 rtl:space-x-reverse items-center">
+                <button type="button" class="theme-toggle-btn p-2 text-gray-500 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700" aria-label="Toggle dark mode"></button>
                 <a href="src/signin/signin.html" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign In</a>
                 <a href="src/signup/signup.html" class="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600">Sign Up</a>
                 <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
@@ -29,9 +164,10 @@
             </div>
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
                 <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                    <li><a href="index.html" class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500" aria-current="page">Home</a></li>
-                    <li><a href="src/about/about.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a></li>
-                    <li><a href="src/contact/contact.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a></li>
+                    <li><a href="index.html" class="nav-link nav-active" aria-current="page">Home</a></li>
+                    <li><a href="src/about/about.html" class="nav-link">About</a></li>
+                    <li><a href="#lab-04-array-objects" class="nav-link">Products</a></li>
+                    <li><a href="src/contact/contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -182,6 +318,141 @@
             </div>
         </section>
 
+        <!-- Gooomly Product Operations -->
+        <section id="lab-04-array-objects" class="space-y-6">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-3">Gooomly Product Operations</h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400">A unified workspace to manage products, monitor catalog quality, and review performance views.</p>
+
+            <div class="bg-white border border-gray-200 rounded-lg shadow p-6 dark:bg-gray-800 dark:border-gray-700">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Create Product Record</h3>
+                <form id="productForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input id="titleInput" type="text" placeholder="Asset title" class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white" required>
+                    <input id="categoryInput" type="text" placeholder="Category (e.g., UI Kit)" class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white" required>
+                    <input id="priceInput" type="number" min="1" placeholder="Price (USD)" class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white" required>
+                    <input id="ratingInput" type="number" step="0.1" min="1" max="5" placeholder="Rating (1 to 5)" class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white" required>
+                    <input id="downloadsInput" type="number" min="0" placeholder="Downloads" class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white" required>
+                    <select id="statusInput" class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                        <option value="published">Published</option>
+                        <option value="draft">Draft</option>
+                        <option value="archived">Archived</option>
+                    </select>
+                    <button type="submit" class="md:col-span-2 primary-btn focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-6 py-3 text-center">
+                        Create Product
+                    </button>
+                </form>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg shadow p-6 dark:bg-gray-800 dark:border-gray-700">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Search and Filter Products</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <input id="searchInput" type="text" placeholder="Search by asset title..." class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                    <select id="categoryFilter" class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                        <option value="all">All Categories</option>
+                        <option value="UI Kit">UI Kit</option>
+                        <option value="3D Asset">3D Asset</option>
+                        <option value="Template">Template</option>
+                    </select>
+                    <select id="statusFilter" class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                        <option value="all">All Status</option>
+                        <option value="published">Published</option>
+                        <option value="draft">Draft</option>
+                        <option value="archived">Archived</option>
+                    </select>
+                    <select id="priceFilter" class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                        <option value="all">All Price Ranges</option>
+                        <option value="low">Low (under 25)</option>
+                        <option value="mid">Mid (25 to 50)</option>
+                        <option value="high">High (above 50)</option>
+                    </select>
+                    <select id="ratingFilter" class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                        <option value="all">All Ratings</option>
+                        <option value="4plus">4.0 and above</option>
+                        <option value="3plus">3.0 and above</option>
+                    </select>
+                    <select id="sortFilter" class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                        <option value="default">Default Order</option>
+                        <option value="priceAsc">Price: Low to High</option>
+                        <option value="priceDesc">Price: High to Low</option>
+                        <option value="ratingDesc">Rating: High to Low</option>
+                        <option value="dateDesc">Date: Newest First</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+            <div id="labMessage"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div class="bg-white border border-gray-200 rounded-lg shadow p-6 dark:bg-gray-800 dark:border-gray-700">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Object Methods Showcase</h3>
+                    <ul id="ifElseOutput" class="space-y-2 text-sm text-gray-700 dark:text-gray-300"></ul>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-lg shadow p-6 dark:bg-gray-800 dark:border-gray-700">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Live Processing Feed</h3>
+                    <ul id="whileLoopOutput" class="space-y-2 text-sm text-gray-700 dark:text-gray-300"></ul>
+                </div>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg shadow p-6 dark:bg-gray-800 dark:border-gray-700">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Catalog Multi-View</h3>
+
+                <div>
+                    <h4 class="font-medium text-gray-900 dark:text-white mb-2">Card View</h4>
+                    <div id="forLoopCards" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3"></div>
+                </div>
+
+                <div class="mt-6">
+                    <h4 class="font-medium text-gray-900 dark:text-white mb-2">List View</h4>
+                    <ul id="forLoopList" class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300"></ul>
+                </div>
+
+                <div class="mt-6 overflow-x-auto">
+                    <h4 class="font-medium text-gray-900 dark:text-white mb-2">Table View</h4>
+                    <table class="min-w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th class="px-4 py-2">Title</th>
+                                <th class="px-4 py-2">Category</th>
+                                <th class="px-4 py-2">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody id="forLoopTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg shadow p-6 dark:bg-gray-800 dark:border-gray-700">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">Segment Analytics</h3>
+                <div id="combinedOutput" class="text-sm text-gray-700 dark:text-gray-300"></div>
+            </div>
+        </section>
+
+        <div id="editModal" class="hidden fixed inset-0 z-50 bg-black/60 p-4 items-center justify-center">
+            <div class="w-full max-w-lg bg-white rounded-lg shadow dark:bg-gray-800">
+                <div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Edit Product</h3>
+                    <button id="cancelEditTop" class="text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white">X</button>
+                </div>
+                <form id="editForm" class="p-4 grid grid-cols-1 gap-3">
+                    <input id="editTitle" type="text" class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white" required>
+                    <input id="editCategory" type="text" class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white" required>
+                    <input id="editPrice" type="number" min="1" class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white" required>
+                    <input id="editRating" type="number" step="0.1" min="1" max="5" class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white" required>
+                    <input id="editDownloads" type="number" min="0" class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white" required>
+                    <select id="editStatus" class="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                        <option value="published">Published</option>
+                        <option value="draft">Draft</option>
+                        <option value="archived">Archived</option>
+                    </select>
+                    <div class="flex gap-3">
+                        <button type="submit" class="primary-btn font-medium rounded-lg text-sm px-5 py-2.5">Update</button>
+                        <button type="button" id="cancelEdit" class="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:hover:bg-gray-600">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <!-- Pricing Section -->
         <section class="bg-white dark:bg-gray-900">
             <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
@@ -279,13 +550,26 @@
         <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
             <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="#" class="hover:underline">Ahmed Raza™</a>. All Rights Reserved.</span>
             <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+                <li><a href="index.html" class="hover:underline me-4 md:me-6">Home</a></li>
                 <li><a href="src/about/about.html" class="hover:underline me-4 md:me-6">About</a></li>
-                <li><a href="src/contact/contact.html" class="hover:underline">Contact</a></li>
+                <li><a href="#lab-04-array-objects" class="hover:underline me-4 md:me-6">Products</a></li>
+                <li><a href="src/contact/contact.html" class="hover:underline me-4 md:me-6">Contact</a></li>
+                <li><a href="src/signin/signin.html" class="hover:underline me-4 md:me-6">Sign In</a></li>
+                <li><a href="src/signup/signup.html" class="hover:underline">Sign Up</a></li>
             </ul>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <!-- Modular JS (order matters: data → constants → utils → pages → orchestrator) -->
+    <script src="src/database/products.js"></script>
+    <script src="src/constants/themeConstants.js"></script>
+    <script src="src/utils/stringHelpers.js"></script>
+    <script src="src/utils/filters.js"></script>
+    <script src="src/utils/crud.js"></script>
+    <script src="src/utils/theme.js"></script>
+    <script src="src/pages/home/home.js"></script>
     <script src="script.js"></script>
+
 </body>
 </html>

@@ -3,10 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn more about Ahmed Raza, our mission, and our team.">
-    <title>Lab 03 - About</title>
+    <meta name="description" content="Learn more about Gooomly, our mission, and our team.">
+    <title>Gooomly | About</title>
+    <link rel="icon" type="image/png" href="../../assets/images/gooomly-logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <style>
+        :root {
+            --primary-color: #cafc4f;
+            --primary-color-hover: #b7e642;
+            --primary-color-soft: #effecf;
+            --primary-color-border: #d6ee9a;
+            --primary-color-text: #3f4f1c;
+            --primary-color-dark-text: #111827;
+        }
+        .nav-link { display:block; padding:0.5rem 0.9rem; border-radius:9999px; color:#111827; transition:all 160ms ease; }
+        .nav-link:hover { background-color:var(--primary-color-soft); color:var(--primary-color-text); }
+        .nav-active { background-color:var(--primary-color); color:var(--primary-color-dark-text); border:1px solid var(--primary-color-hover); box-shadow:0 4px 10px rgba(17,24,39,0.08); }
+        .dark .nav-link { color:#f9fafb; }
+        .primary-chip { background-color:var(--primary-color-soft); color:var(--primary-color-text); border:1px solid var(--primary-color-border); }
+        button, a[class*="rounded-lg"] { border-radius:9999px !important; transition:all 180ms ease; letter-spacing:0.01em; }
+        button:hover, a[class*="rounded-lg"]:hover { transform:translateY(-1px); box-shadow:0 10px 18px rgba(17,24,39,0.12); }
+        .bg-blue-700,.bg-blue-600,.dark\:bg-blue-600 { background-color:var(--primary-color) !important; color:var(--primary-color-dark-text) !important; border-color:var(--primary-color-hover) !important; }
+        .hover\:bg-blue-800:hover,.hover\:bg-blue-700:hover,.dark\:hover\:bg-blue-700:hover { background-color:var(--primary-color-hover) !important; color:var(--primary-color-dark-text) !important; }
+        .focus\:ring-blue-300:focus,.focus\:ring-blue-200:focus,.dark\:focus\:ring-blue-800:focus,.dark\:focus\:ring-blue-900:focus { --tw-ring-color:var(--primary-color-border) !important; }
+        .text-blue-700,.text-blue-600,.text-blue-800,.dark\:text-blue-300,.dark\:text-blue-400,.dark\:text-blue-500,
+        .md\:text-blue-700,.md\:dark\:text-blue-500,.md\:hover\:text-blue-700,.md\:dark\:hover\:text-blue-500 { color:var(--primary-color-text) !important; }
+        .bg-blue-50,.from-blue-50,.to-indigo-50 { background-color:var(--primary-color-soft) !important; }
+        .border-blue-200,.dark\:border-blue-800,.focus\:border-blue-600:focus { border-color:var(--primary-color-border) !important; }
+        .focus\:ring-blue-600:focus { --tw-ring-color:var(--primary-color-border) !important; }
+        html.dark { color-scheme:dark; }
+        body { transition:background-color 300ms ease, color 300ms ease; }
+        .framer-shell {
+            background: radial-gradient(1200px 500px at -10% -20%,rgba(202,252,79,0.2),transparent 55%),
+                         radial-gradient(900px 500px at 110% 0%,rgba(202,252,79,0.16),transparent 52%),
+                         linear-gradient(180deg,#f8fafc 0%,#f3f4f6 100%);
+        }
+        .dark .framer-shell {
+            background: radial-gradient(1200px 500px at -10% -20%,rgba(202,252,79,0.12),transparent 55%),
+                         radial-gradient(900px 500px at 110% 0%,rgba(202,252,79,0.08),transparent 52%),
+                         linear-gradient(180deg,#0b1220 0%,#111827 100%);
+        }
+        .glass-card { background:rgba(255,255,255,0.72); backdrop-filter:blur(10px); border:1px solid rgba(209,213,219,0.8); box-shadow:0 15px 40px rgba(17,24,39,0.08); }
+        .dark .glass-card { background:rgba(17,24,39,0.65); border:1px solid rgba(75,85,99,0.8); }
+        .metric-card { border:1px solid #e5e7eb; border-radius:1rem; background:#ffffff; padding:1rem; }
+        .dark .metric-card { border-color:#374151; background:#111827; }
+    </style>
+    <script>(function(){var t=localStorage.getItem("gooomly-theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.classList.add("dark");}})();</script>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 font-sans">
     <header>
@@ -16,80 +59,70 @@
                     <img src="../../assets/images/gooomly-logo.png" class="h-10 rounded shadow-sm" alt="Gooomly Logo" />
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Gooomly</span>
                 </a>
-                <div class="flex md:order-2 space-x-3 rtl:space-x-reverse">
+                <div class="flex md:order-2 space-x-3 rtl:space-x-reverse items-center">
+                    <button type="button" class="theme-toggle-btn p-2 text-gray-500 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700" aria-label="Toggle dark mode"></button>
                     <a href="../signin/signin.html" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign In</a>
                     <a href="../signup/signup.html" class="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-4 py-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600">Sign Up</a>
                     <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-                        </svg>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/></svg>
                     </button>
                 </div>
                 <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
                     <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                        <li><a href="../../index.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</a></li>
-                        <li><a href="about.html" class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500" aria-current="page">About</a></li>
-                        <li><a href="../contact/contact.html" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a></li>
+                        <li><a href="../../index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link nav-active" aria-current="page">About</a></li>
+                        <li><a href="../../index.html#lab-04-array-objects" class="nav-link">Products</a></li>
+                        <li><a href="../contact/contact.html" class="nav-link">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <main>
-        <section class="bg-white dark:bg-gray-900">
-            <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-                <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">About <span class="text-blue-700">Gooomly</span></h2>
-                    <p class="mb-4">We are strategists, designers and developers. Innovators and problem solvers. Small enough to be simple and quick, but big enough to deliver the scope you want at the pace you need.</p>
-                    <p>We build practical web experiences with clean UI structure, reusable patterns, and responsive components.</p>
+    <main class="framer-shell">
+        <section class="py-12 px-4 mx-auto max-w-screen-xl lg:py-20 lg:px-6">
+            <div class="grid gap-8 lg:grid-cols-2 items-center">
+                <div class="space-y-6">
+                    <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase primary-chip">About Gooomly</span>
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white">Building a premium marketplace for digital creators.</h1>
+                    <p class="text-lg text-gray-600 dark:text-gray-300">Gooomly helps designers, developers, and makers sell high-quality digital assets through a modern, trusted, and conversion-focused experience.</p>
+                    <div class="grid grid-cols-2 gap-3 max-w-md">
+                        <div class="metric-card">
+                            <p class="text-2xl font-bold text-gray-900 dark:text-white">1200+</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Active Creators</p>
+                        </div>
+                        <div class="metric-card">
+                            <p class="text-2xl font-bold text-gray-900 dark:text-white">4.8/5</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Average Rating</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="grid grid-cols-2 gap-4 mt-8">
-                    <img class="w-full rounded-lg" src="../../assets/images/gooomly-hero.png" alt="office content 1">
-                    <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 2">
+                <div class="glass-card rounded-3xl p-4 md:p-6">
+                    <img class="w-full rounded-2xl object-cover" src="../../assets/images/gooomly-hero.png" alt="Gooomly platform preview">
                 </div>
             </div>
         </section>
-
-        <section class="bg-gray-50 dark:bg-gray-800">
-            <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-                <div class="max-w-screen-md mb-8 lg:mb-16">
-                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our Core Principles</h2>
-                    <p class="text-gray-500 sm:text-xl dark:text-gray-400">We operate on a foundation of clear principles that guide every decision and project, ensuring consistency and quality in everything we do.</p>
-                </div>
-                <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
-                    <div>
-                        <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                            <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.042.942l-1.006 4.024a1 1 0 00.992 1.213l7-3a1 1 0 000-1.84l-4.25-1.823a.999.999 0 01-.042-.942l1.006-4.024a1 1 0 00-.992-1.213zM9.5 6.588l-3.5 1.502 1.006-4.024L9.5 6.588z"></path></svg>
-                        </div>
-                        <h3 class="mb-2 text-xl font-bold dark:text-white">Our Mission</h3>
-                        <p class="text-gray-500 dark:text-gray-400">Deliver accessible, high-quality interfaces that are easy to scale across multiple pages.</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                            <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 5.555a.5.5 0 01.445-.445l3.5 1a.5.5 0 010 .89l-3.5 1a.5.5 0 01-.445-.445V5.555zM10 13a3 3 0 100-6 3 3 0 000 6z"></path></svg>
-                        </div>
-                        <h3 class="mb-2 text-xl font-bold dark:text-white">Our Process</h3>
-                        <p class="text-gray-500 dark:text-gray-400">Use consistent design systems, semantic HTML, and utility-first styling for fast iteration.</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-                            <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v1.5a1.5 1.5 0 01-3 0V13a2 2 0 00-4 0v1a1 1 0 102 0v-1a1 1 0 112 0v1a3 3 0 11-6 0V9a1 1 0 011-1h1V7a1 1 0 10-2 0v1a1 1 0 102 0V8a3 3 0 013-3h.008C9.07 4.978 8.522 4.5 8 4.5a2.5 2.5 0 00-2.5 2.5v.5A1.5 1.5 0 013 9v-1.168A6.002 6.002 0 014.332 8.027z" clip-rule="evenodd"></path></svg>
-                        </div>
-                        <h3 class="mb-2 text-xl font-bold dark:text-white">Our Values</h3>
-                        <p class="text-gray-500 dark:text-gray-400">Focus on clarity, maintainability, and user-centered layouts across every page.</p>
-                    </div>
-                </div>
+        <section class="py-8 px-4 mx-auto max-w-screen-xl lg:py-12 lg:px-6">
+            <div class="grid md:grid-cols-3 gap-4">
+                <article class="glass-card rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Mission</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Empower creators to monetize their skills with clarity, trust, and smooth product delivery.</p>
+                </article>
+                <article class="glass-card rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Process</h3>
+                    <p class="text-gray-600 dark:text-gray-300">We design reusable systems and iterate quickly to keep the product scalable across pages.</p>
+                </article>
+                <article class="glass-card rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Values</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Quality-first UI, maintainable code, and a creator-first product experience in every release.</p>
+                </article>
             </div>
         </section>
-
-        <section class="bg-white dark:bg-gray-900">
-            <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
-                <div class="mx-auto max-w-screen-sm">
-                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Let's build something together</h2>
-                    <p class="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Have a project in mind? We’d love to hear about it. Get in touch with us to see how we can help you achieve your goals.</p>
-                    <a href="../contact/contact.html" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Contact Us</a>
-                </div>
+        <section class="py-10 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div class="glass-card rounded-3xl p-8 lg:p-12 text-center">
+                <h2 class="mb-3 text-3xl md:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Let's build your next best-selling asset</h2>
+                <p class="mb-8 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Have a product idea or want to collaborate with the Gooomly team? We are ready to help you launch faster.</p>
+                <a href="../contact/contact.html" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Start a Conversation</a>
             </div>
         </section>
     </main>
@@ -97,7 +130,9 @@
         <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
             <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="../../index.html" class="hover:underline">Ahmed Raza™</a>. All Rights Reserved.</span>
             <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+                <li><a href="../../index.html" class="hover:underline me-4 md:me-6">Home</a></li>
                 <li><a href="about.html" class="hover:underline me-4 md:me-6">About</a></li>
+                <li><a href="../../index.html#lab-04-array-objects" class="hover:underline me-4 md:me-6">Products</a></li>
                 <li><a href="../contact/contact.html" class="hover:underline me-4 md:me-6">Contact</a></li>
                 <li><a href="../signin/signin.html" class="hover:underline me-4 md:me-6">Sign In</a></li>
                 <li><a href="../signup/signup.html" class="hover:underline">Sign Up</a></li>
@@ -105,6 +140,8 @@
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-    <script src="../../script.js"></script>
+    <script src="../../src/constants/themeConstants.js"></script>
+    <script src="../../src/utils/theme.js"></script>
+    <script>document.addEventListener("DOMContentLoaded",()=>{initTheme();initThemeToggle();});</script>
 </body>
 </html>
