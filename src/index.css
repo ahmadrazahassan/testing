@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --primary: #cafc4f;
+  --primary-hover: #b7e642;
+  --primary-foreground: #0a0a0b;
+  --primary-border: #a3d636;
+  --page-bg: #fafafa;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --surface-muted: #f4f4f5;
+  --border-default: rgba(24, 24, 27, 0.12);
+  --border-strong: rgba(24, 24, 27, 0.18);
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --text-muted: #71717a;
+}
+
+html.dark {
+  color-scheme: dark;
+  --primary: #cafc4f;
+  --primary-hover: #d4f862;
+  --primary-foreground: #0a0a0b;
+  --primary-border: #b7e642;
+  --page-bg: #09090b;
+  --surface: #18181b;
+  --surface-elevated: #1f1f23;
+  --surface-muted: #27272a;
+  --border-default: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --text-primary: #fafafa;
+  --text-secondary: #e4e4e7;
+  --text-muted: #a1a1aa;
+}
+
+body {
+  background-color: var(--page-bg);
+  color: var(--text-primary);
+  @apply antialiased;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* Primary pill CTA */
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: 1px solid var(--primary-border);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease,
+    box-shadow 160ms ease;
+}
+.primary-btn:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+.primary-btn:active {
+  transform: scale(0.98);
+}
+
+html.dark .primary-btn {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08) inset;
+}
+
+/* Ghost / outline pill (dark surfaces) */
+.btn-pill-outline-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: transparent;
+  color: #fafafa;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+.btn-pill-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+.btn-pill-outline-light:active {
+  transform: scale(0.98);
+}
+
+/* Outline pill on light backgrounds */
+.btn-pill-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text-primary);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+.btn-pill-outline-dark:hover {
+  background-color: var(--surface-muted);
+  border-color: var(--text-primary);
+}
+.btn-pill-outline-dark:active {
+  transform: scale(0.98);
+}
+
+.surface-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border-default);
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+html.dark .surface-card {
+  background-color: var(--surface-elevated);
+}
+
+html.dark select,
+html.dark input:not([type='checkbox']):not([type='radio']) {
+  background-color: var(--surface-muted);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+html.dark select option {
+  background-color: var(--surface);
+  color: var(--text-primary);
+}
