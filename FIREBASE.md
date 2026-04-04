@@ -304,6 +304,7 @@ For multiple environments (dev / staging / prod), use separate Firebase projects
 | `auth/invalid-api-key` | Wrong `VITE_FIREBASE_API_KEY` or typo |
 | `permission-denied` (Firestore) | Security rules block the request |
 | Blank page after deploy | Wrong `public` folder (`dist` for Vite) or missing SPA rewrite to `index.html` |
+| `main.jsx` MIME type `text/jsx` error | Vercel is serving **source** files, not the build. Set **Output Directory** to `dist` and ensure **Build Command** is `npm run build` (see `vercel.json` in this repo). |
 | Variables undefined in browser | Name must start with `VITE_`; rebuild after changing `.env` |
 
 ---
