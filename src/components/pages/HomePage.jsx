@@ -4,6 +4,7 @@ import { HomeFeaturedProducts } from '../views/homeViews/HomeFeaturedProducts.js
 import { HomeProductOperations } from '../views/homeViews/HomeProductOperations.jsx'
 import { HomePricing } from '../views/homeViews/HomePricing.jsx'
 import { HomeClosingCta } from '../views/homeViews/HomeClosingCta.jsx'
+import { HomeCounterApp } from '../views/homeViews/HomeCounterApp.jsx'
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
         <HomeMarketplaceOverview />
         <HomeFeaturedProducts />
         <HomeProductOperations />
+        <HomeCounterApp />
         <HomePricing />
         <HomeClosingCta />
       </div>
